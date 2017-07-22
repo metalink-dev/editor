@@ -1,15 +1,12 @@
 rem *** Used to create a Python exe 
 
 call sample_setenv.bat
-call setenv.bat
 
-SET PYTHONPATH=%PYTHONDIR%\python.exe
-
-%PYTHONPATH% setup.py clean
+%PYTHON% setup.py clean
 
 rem ***** create the exe
-%PYTHONPATH% -OO setup.py py2exe 
+%PYTHON% -OO setup.py py2exe 
 
-%PYTHONPATH% setup.py zip
+%PYTHON% setup.py zip
 
 echo "done..."

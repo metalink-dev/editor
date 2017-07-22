@@ -1,8 +1,7 @@
 call sample_setenv.bat
-call setenv.bat
 
-call py2exe.bat
+call py2exe.bat %1
 
-"%NSISDIR%\makensis.exe" setup.nsi
+makensis.exe setup.nsi
 
 echo "done..."

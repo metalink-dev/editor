@@ -16,6 +16,7 @@ SetCompressor lzma
 
 ; MUI 1.67 compatible ------
 !include "MUI.nsh"
+!include "install.nsh"
 
 ; MUI Settings
 !define MUI_ABORTWARNING
@@ -64,6 +65,8 @@ Section "MainSection" SEC01
   SetOutPath "$INSTDIR"
   SetOverwrite try
   File /r ${BUILDDIR}\dist\*.*
+  
+  !insertmacro install "Microsoft Visual C++ 2008 Redistributable Package (x86) 9.0.21022" {FF66E9F6-83E7-3A3E-AF14-8DE9A809A6A4} http://download.microsoft.com/download/1/1/1/1116b75a-9ec3-481a-a3c8-1777b5381140/vcredist_x86.exe "/qb"
 
 ; Shortcuts
   !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
@@ -106,7 +109,7 @@ Section Uninstall
   Delete "$DESKTOP\Metalink Editor.lnk"
 
   RMDir "$SMPROGRAMS\$ICONS_GROUP"
-  RMDir "$INSTDIR"
+  RMDir /r "$INSTDIR"
 
   DeleteRegKey ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}"
   DeleteRegKey HKLM "${PRODUCT_DIR_REGKEY}"

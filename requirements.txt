@@ -1,0 +1,3 @@
+py2exe_py2
+pymetalink >= 6.2
+-f https://github.com/metalink-dev/pymetalink/releases/
