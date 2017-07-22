@@ -3,7 +3,7 @@ by Hampus Wessman
 
 Version 1.3.1
 * Changed to pymetalink dependency
-* Refreshed various build dependencies
+* Refreshed various build dependencies and scripts
 * Uninstaller bug fix
 * Made Microsoft Redistributable a separate dependency and included download option in installer
 
